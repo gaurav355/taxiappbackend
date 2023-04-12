@@ -9,6 +9,7 @@ module.exports =async function(db){
             // useFindAndModify : false
         }
         // const uri = `mongodb://${process.env.HOST}:${process.env.DB_PORT}/${process.env.DB}`;
+        console.log("env",process.env.DB);
         const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.diq3bou.mongodb.net/${process.env.DB}?retryWrites=true&w=majority`
         mongoose.connect(uri,options).then(()=>{
             console.log("database connected succesfully..");

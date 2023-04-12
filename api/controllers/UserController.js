@@ -144,6 +144,7 @@ module.exports = function (services) {
                     if (OTPDoc) {
                         let currentTime = new Date();
                         let expiryTime = OTPDoc.expiryAt;
+                        console.log("debug itme",currentTime,expiryTime);
                         await services.OTPServices.deleteOTP({_id: OTPDoc._id});
                         if (expiryTime < currentTime) {
                             return res.send({
